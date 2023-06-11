@@ -45,7 +45,7 @@ export function Opcoes({navigation}: DrawerTypes) {
 
     return(
         <View style={styles.container}>
-            <ComponentButtonInterface onPress={() => navigation.navigate("Camera")}>
+            <ComponentButtonInterface onPress={() => navigation.navigate("Camera")} /* Vai para a página da Câmera */>
                 <Text style={styles.buttonText}>Tirar foto</Text>
             </ComponentButtonInterface>
             {photo && (
@@ -53,13 +53,13 @@ export function Opcoes({navigation}: DrawerTypes) {
             )}
             { picture && (
                 <>
-                <Image source={{ uri: picture.uri}} style={styles.image} />
+                <Image source={{ uri: picture.uri}} style={styles.image} /* Salva a foto *//>
                 <ComponentButtonInterface onPress={salvarImagem}>
                     <Text style={styles.buttonText}>Salvar Imagem</Text>
                 </ComponentButtonInterface>
                 </>
             )}
-            <ComponentButtonInterface onPress={abrirImagem}>
+            <ComponentButtonInterface onPress={abrirImagem} /* Abre a galeria */>
                 <Text style={styles.buttonText}>Abrir Imagem</Text>
             </ComponentButtonInterface>
         </View>
